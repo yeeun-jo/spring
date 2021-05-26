@@ -1,0 +1,49 @@
+1) 이클립스 다운받아서 새로 설치
+
+https://www.eclipse.org/downloads/packages/release/2019-06/r
+
+
+2) 인코딩 설정 (general - workspace, web - css/html/jsp)
+
+3) tomcat 8.5 서버 추가 (server - runtime environment)
+
+4) window - web browser - chrome
+
+5) help - eclipse marketplace - sts - 
+	spring tools 3 (standalone edition) 3.9.x.RELEASE
+	install
+	confirm
+	accept
+	install anyway
+	restart now
+
+6) new project - spring - spring legacy project
+	spring MVC project
+	top level package : com.itbank.day01
+
+	프로젝트가 생성되면 왼쪽의 탐색기는 project explore 인지 확인하기
+
+	maven 기반이므로 	pom.xml 설정
+	- <java-version>1.8</java-version>
+	- <org.springframework-version>4.3.30.RELEASE</org.springframework-version>
+	- <source>1.8</source>
+	- <target>1.8</target>
+
+	web project 	web.xml 설정
+	- <web-app version="3.1"
+	- javaee/web-app_3_1.xsd">
+
+	프로젝트 우클릭 - Run as - Run on server
+
+	src/main/webapp/WEB-INF/views/home.jsp 삭제
+	(webapp 폴더는 Dynamic Web Project 의 WebContent와 같은 역할)
+
+	새 파일 - home.jsp
+
+	<h1>Hello, world !!</h1>
+	<hr>
+	<p>  오늘은 ${serverTime} 입니다. </p>
+
+	
+
+	

@@ -1,0 +1,417 @@
+@charset "utf-8";
+
+.hidden {
+    display: none;
+}
+.cIjWgG {
+    position: fixed;
+    z-index: 5;
+    left: 0px;
+    right: 0px;
+    max-width: 1000px;
+    width: 90%;
+    margin: 0px auto;
+    cursor: pointer;
+    border-radius: 2px;
+    height: 56px;
+    background-color: rgb(219, 7, 74);
+    box-shadow: rgb(219 7 74 / 30%) 0px 2px 6px 0px;
+    text-align: center;
+    bottom: 10px;
+}
+.cIjWgG .fixed-wrapper {
+    position: relative;
+    height: 100%;
+}
+.cIjWgG .innerButton .tooltip-wrapper {
+    position: absolute;
+    top: -69px;
+    left: 50%;
+    margin-left: -130px;
+}
+.cIjWgG .innerButton .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s ease 0.2s, opacity 0.2s ease-in-out 0s;
+}
+.cIjWgG .innerButton .tooltip-wrapper img {
+    display: block;
+    width: 260px;
+    height: 69px;
+}
+fieldset, img {
+    border: 0;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+.cIjWgG .container {
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    line-height: 56px;
+}
+
+#checkIn-checkOut {
+    height: 125px;
+    
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+#checkIn-checkOut  h1{
+    color: #4D4D4D;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.33;
+    height: 26px; 
+
+}
+#check {
+    display: flex;
+    text-align: center;
+    padding-top: 20px;
+}
+#check-in {
+    border-right-width: 0.5px;
+    border-right-style: solid;
+    border-right-color: #e7e7e7;;
+    height: 33px;
+}
+#check-in,#check-out {
+    width: 364px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* 여기서 부터 금/흡연 여부 */
+.static-item {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.static-item h1 {      
+    color: #4D4D4D;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.33;
+    height: 26px;
+}
+.static-item ul {
+    margin-top: 20px;
+    list-style-type: none!important;
+}   
+.static-item ul li {
+    /* display: block;  이거 때문에 display:none이 먹히지 않았음*/ 
+    margin: 0 16px;
+    font-size: 14px;
+    line-height: 1.64;
+    color: #4d4d4d;
+    list-style-type: none;
+    position: relative;
+}
+.static-item ul li:before {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #333;
+    top: 10px;
+    left: -13px;
+    border-radius: 100%;
+}
+/* 부대 시설정보 */
+.static-item, .sub-title:nth-child(n+2) {
+    margin-top: 20px;
+}
+.static-item, .sub-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.44;
+    color: #4d4d4d;
+}
+.static-item ul{
+    display: block;
+    line-height: 1.64;
+}
+.unvisible, .more-enter-done {
+    display: block;
+    line-height: 1.64;
+}
+.static-item ul li:nth-child(n+2) {
+    margin-top: 14px;
+}
+.static-item ul li {
+    margin: 0 16px;
+    font-size: 14px;
+    color: #4d4d4d;
+    list-style-type: none;
+    position: relative;
+} 
+.static-item .show-more-btn{
+    margin: 14px 0 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.64;
+    color: #db074a;
+    cursor: pointer;
+}  
+.more-enter-done{
+    display: none;
+
+}
+/* 조식 정보 */
+.info-table h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info-table h1 span {
+    font-size: 12px;
+    line-height: 1.33;
+    text-align: right;
+    color: #888;
+}
+.info-table .info-item table {
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+table {
+    display: table;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+button, input, select, table, textarea {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+.info-table .info-item table tr {
+    height: 44px;
+}
+td, th, tr {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #888;;
+}
+tr {
+    display: table-row;
+}
+.info-table .info-item table tr td:first-child {
+    font-size: 12px;
+    line-height: 1.33;
+    color: #888;
+    width: 146px;
+    background-color: #f8f8f9;
+}
+.info-table .info-item table tr td {
+    vertical-align: middle;
+    text-indent: 12px;
+}
+td, th {
+    display: table-cell;
+}
+td, th, tr {
+    padding: 0;
+    margin: 0;
+}
+
+/* 판매자 정보*/
+a, a:link {
+text-decoration: none;
+}
+
+.seller-info-box {
+    background-color: #fff;
+    border-top: 10px solid #f6f7f8;
+    border-bottom: 10px solid #f6f7f8;
+}
+.seller-info-box p {
+    position: relative;
+    font-size: 20px;
+    color: #4d4d4d;
+    line-height: 1.2;
+    font-weight: 700;
+    padding: 18px 20px;
+    border-bottom: 1px solid #e6ebef;
+}
+
+/* 무엇을 도와드릴까요?*/
+.councierge {
+    padding-top: 30px;
+    padding-bottom: 48px;
+    text-align: center;
+}
+.detail-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.33;
+    color: #4d4d4d;
+}
+.councierge .help-text {
+    margin-bottom: 16px;
+    color: #666;
+}
+.councierge .help-time {
+    margin-bottom: 16px;
+    color: #4d4d4d;
+    line-height: 21px;
+}
+.councierge .help-inquiry {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #e7e7e7;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.councierge .help-inquiry img {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+}
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*여기서부터 모달창(날짜)*/
+
+
+.container > .btn {
+padding: 20px 40px;
+font-size: 30px;
+border-radius: 40px;
+}
+.container > .clostbtn{
+    padding: 20px 40px;
+    font-size: 30px;
+    border-radius: 40px;
+}
+.btn {
+margin: 20px 0;
+color: #fff;
+position: relative;
+transition: all .4s ease;
+cursor: pointer;
+
+}
+#reservation-modal-Btn {
+ border: none;
+ height: 56px;
+ background-color: rgb(219, 7, 74);
+ font-size: 18px;
+ color: white;
+ font-weight: 700;
+ line-height: 56px;
+ outline: none;
+ cursor: pointer;
+ width: 1000px;
+}
+
+.reservation{
+width: 750px;
+}
+.reservation-btn {
+	text-align: right;
+	width: 760px;
+	height: 66px;
+	border:none;
+	border-radius: 32px 0 0 32px ;
+	background: white;
+	color: black;
+	cursor: pointer;
+}
+.reservation-btn > div {
+	text-align: center;
+	
+}
+.reservation_content {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 50px;
+	margin-right: 50px;
+	
+}
+
+.reservation_modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.reservation_modal_overlay {
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+}
+
+.reservation_modal_content {
+	border-radius: 32px !important;
+	background-color: white;
+	position: fixed;
+	min-width: 850px;
+	width: 50%;
+	height: 66px;
+	max-width: 500px;
+
+}
+.dataSelector {
+	height: 60px;
+	width: 750px;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	
+}
+.reservationBtn {
+	border: none;
+	height: 66px;
+	width: 90px;
+	border-radius: 31px;
+	background-color: #FF385C;
+	color: white;
+	font-weight: bold;
+}
+.search-img {
+	width: 40px;
+	height: 20px;
+	background-color: #FF385C;
+}
+.hidden {
+	display: none;
+}
+
+/* 달력 */
+.flatpickr-calendar.open {
+	width: 760px;
+}
+.flatpickr-rContainer {
+	width: 760px;
+}
+.flatpickr-rContainer > div{
+	width: 760px;
+}
+.flatpickr-rContainer > .flatpickr-days > div{
+
+	width: 760px;
+	max-width: 760px;
+
+}
+.flatpickr-rContainer > .flatpickr-days > div > span{
+	width: 117px;
+	max-width: 117px;
+}

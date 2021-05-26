@@ -1,0 +1,65 @@
+.myPage {
+	max-width: 1000px;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.myPage_login0 {
+	margin-top: 100px;
+}
+
+.myPage_loginO_content {
+	height: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
+
+.reservation{
+	margin-top: 50px;
+}
+.res_content {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.review_modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.review_modal_overlay {
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.review_modal_content {
+	background-color: white;
+	text-align: center;
+	position: relative;
+	min-width: 400px;
+	width: 50%;
+	max-width: 500px;
+	z-index: 1;
+}
+.modal_ho_name{
+	font-weight: bold;
+	
+}
+
+.hidden {
+	display: none;
+}

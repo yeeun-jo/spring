@@ -1,0 +1,29 @@
+jt.query(String sql, RowMapper rowMapper);
+
+- sql : select 로 시작하는 쿼리문
+- rowMapper : 각 줄을 어떻게 매핑하여 객체로 반환할지 결정하는 객체
+
+------------------------------------------------------------------
+
+jt.query(String sql, RowMapper rowMapper, Object... args);
+
+- sql : select 로 시작하는 쿼리문 (?를 포함하는 PreparedStatement 형식)
+- rowMapper : 각 줄을 어떻게 매핑하여 객체로 반환할지 결정하는 객체
+- Object... args : ?에 들어갈 값을 순서대로 작성하면 된다
+  (String.format(sql, userid, userpw) 와 비슷하게)
+
+------------------------------------------------------------------
+
+jt.query() - List<DTO>
+jt.queryForObject() - DTO
+
+는 반환형만 다르고, 인자를 전달하는 방식은 거의 동일하다
+
+------------------------------------------------------------------
+
+jt.update(sql)
+- sql : insert, update, delete 로 시작하는 쿼리문
+
+jt.update(sql, Object... args)
+- sql : insert, update, delete 로 시작하는 쿼리문
+- String.format() 처럼 사용하면 된다

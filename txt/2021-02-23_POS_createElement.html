@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 200px; height: 200px; margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; width: 100%">
+        <div style="display: flex; flex-flow: wrap; width: 100%;">
+            <button>콜라 | 1500</button>
+            <button>사이다 | 1500</button>
+            <button>환타 | 2000</button>
+            <button>웰치스 | 2000</button>
+            <button>조지아 | 1500</button>
+            <button>레쓰비 | 1000</button>
+            <button>아메리카노 | 1500</button>
+            <button>옛날커피 | 2500</button>
+        </div>
+        <div style="width: 100%; height: 750px; display: flex; justify-content: center; align-items: flex-end;">
+            <form id="form" method="POST" style="width: inherit; height: inherit;">
+                <div style="border: 2px solid #dadada;
+                            width: inherit; height: 100%;">
+                    <div style="display: flex; justify-content: space-between; width: 100%; border-bottom: 1px solid black;">
+                        <div class="">상품명</div>
+                        <div class="">수량 | 가격</div>
+                    </div>
+                    <div id="itemList"></div>
+                </div>
+                <div style="text-align: center;">
+                    <input type="submit" value="결제">
+                </div>
+            </form>        
+        </div>
+    </div>
+
+    <script>
+        const itemList = document.getElementById('itemList');
+        const btnList = document.querySelectorAll('button');
+
+        const clickHandler = (event) => {
+            const itemName = event.target.innerText.split(' | ')[0];
+            const itemPrice = +event.target.innerText.split(' | ')[1];
+
+            const itemArr = Array.from(itemList.querySelectorAll('input[name="itemName"]'));
+            const flag = itemArr.filter(e => {return e.value === itemName}).length != 0;
+
+            itemList.querySelectorAll('input[name="itemName"]').forEach(e => {
+                // console.log(e.value)
+                if(e.value === itemName){
+                    e.nextElementSibling.value = +e.nextElementSibling.value + 1;
+                    return;
+                }
+            });
+
+            if(flag) return;
+
+            const div = document.createElement('div');
+            div.style.display = 'flex';
+            div.style.justifyContent = 'space-between';
+            div.style.width = '100%';
+
+            const input1 = document.createElement('input');
+            input1.type = 'text';
+            input1.name = 'itemName';
+            input1.value = itemName;
+            input1.style.border = '0';
+            input1.readOnly = 'true';
+
+            const input2 = document.createElement('input');
+            input2.type = 'number';
+            input2.name = 'quantity';
+            input2.value = '1';
+            input2.style.width = '50px';
+
+            const input3 = document.createElement('input');
+            input3.type = 'number';
+            input3.name = 'price';
+            input3.value = itemPrice;
+            input3.readOnly = 'true';
+            input3.style.border = '0';
+            input3.style.width = '100px';
+
+            div.appendChild(input1);
+            div.appendChild(input2);
+            div.appendChild(input3);
+            itemList.appendChild(div);
+        }
+
+        btnList.forEach(element => {
+            element.onclick = clickHandler;
+        });
+    </script>
+
+
+    
+</body>
+</html>

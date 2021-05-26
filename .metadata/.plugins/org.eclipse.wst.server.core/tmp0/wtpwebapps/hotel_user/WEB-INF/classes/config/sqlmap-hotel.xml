@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="com.hotel.hotel.HotelDAO">
+	
+	<!-- 호텔리스트 -->
+	<select id="selectList" resultType="hashmap">
+		select * from hotel
+	</select>
+	
+	<!-- 해당호텔 -->
+	<select id="selectOne" resultType="hotel" parameterType="string">
+		select * from hotel where ho_name=#{ho_name}
+	</select>
+	
+	<!-- 해당호텔 판매자정보 -->
+	<select id="selectSellerInfo" resultType="hotel" parameterType="string">
+		select hotel.ho_name, hotel.ho_address, hotel.ho_pnum,
+				admin.ad_name,admin.ad_email
+		from admin,hotel
+		where hotel.ho_name = #{ho_name}
+			and hotel.ho_ad_id = admin.ad_id
+	</select>
+	
+	<!-- 해당호텔 주소 -->
+	<select id="selectHotelAddress" resultType="hotel" parameterType="string">
+		select ho_name, ho_address from hotel where ho_name= #{ho_name}
+	</select>
+
+</mapper>

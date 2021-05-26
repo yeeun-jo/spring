@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+ 	<bean id="dataSource" 
+		  class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		  destroy-method="close">
+		  
+		  <property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		  <property name="jdbcUrl" value="jdbc:oracle:thin:@182.212.181.172:1521:xe" />
+		  <property name="user" value="c##itbankTeam2" />
+		  <property name="password" value="ghkdlxld" />
+		  <property name="maxPoolSize" value="100" />
+		  <property name="maxIdleTime" value="600" />
+		  <property name="idleConnectionTestPeriod" value="300" />
+	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:config/mybatis-config.xml" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath:config/sqlmap-member.xml</value>
+				<value>classpath:config/sqlmap-hotel.xml</value>
+				<value>classpath:config/sqlmap-reservation.xml</value>
+				<value>classpath:config/sqlmap-review.xml</value>
+				<value>classpath:config/sqlmap-calendar.xml</value>
+				<value>classpath:config/sqlmap-reply.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="sqlSessionTemplate"
+		  class="org.mybatis.spring.SqlSessionTemplate"
+		  destroy-method="clearCache">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean> 
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		
+		<property name="maxUploadSize" value="10485760"/>
+		<property name="maxInMemorySize" value="10485760"/>
+		<property name="defaultEncoding" value="utf-8"/>	
+
+	</bean>
+	
+	<context:component-scan base-package="com.hotel.service" />
+	
+	<!-- 인터페이스를 찾아서 DAO로 처리한다. 메서드의 이름이 mapper파일의 id가 된다. -->
+	<mybatis-spring:scan base-package="com.hotel.member"/>
+	<mybatis-spring:scan base-package="com.hotel.hotel"/>
+	<mybatis-spring:scan base-package="com.hotel.reservation"/>
+	<mybatis-spring:scan base-package="com.hotel.review"/>
+	<mybatis-spring:scan base-package="com.hotel.calendar"/>
+	<mybatis-spring:scan base-package="com.hotel.reply"/>
+</beans>

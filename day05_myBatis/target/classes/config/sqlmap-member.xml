@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+			"-//mybatis.org//DTD Mapper 3.0//EN" 
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+			
+<!-- testDAO 객체가 참조하는 설정이다 -->
+<mapper namespace="testDAO">
+
+	<!-- jdbcTemplate에서 rowMapper에 해당하는 컬럼데이터를 객체 멤버필드에 대입하는 과정이 없다 -->
+	<select id="selectMemberList" resultType="com.itbank.model.MemberDTO">
+		select * from member2
+	</select>
+	
+	<!-- mybatis-config.xml에서 typeAliases를 선언해서 줄여서 쓰기가 가능함 -->
+	<!-- #{}는 PreparedStatement에서의 ?와 같은 역할 (값을 맵핑하여, 자료형에 따라 처리함) -->
+	<select id="selectMember" parameterType="member" resultType="member">
+		select * from member2 where userid=#{userid}
+	</select>
+	
+	<select id="loginMember" parameterType="member" resultType="member">
+		select * from member2 where userid=#{userid} and userpw=#{userpw}
+	</select>
+	
+	<insert id="insertMember" parameterType="member" >
+		insert into member2 (userid, userpw, username, email, gender) 
+		values (#{userid},#{userpw},#{username},#{email},#{gender})
+	</insert>
+</mapper>			

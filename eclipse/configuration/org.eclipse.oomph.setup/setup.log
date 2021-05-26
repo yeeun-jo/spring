@@ -1,0 +1,65 @@
+[2021-02-02 18:36:50] Executing bootstrap tasks
+[2021-02-02 18:36:50] Java(TM) SE Runtime Environment 1.8.0_241-b07
+[2021-02-02 18:36:50] Product org.eclipse.products.epp.package.java.2019-06
+[2021-02-02 18:36:50] Bundle org.eclipse.oomph.setup 1.13.0.v20190530-1228, build=4030, branch=ed8d2fdcc99c1d3461399fc1bee02645433fa697
+[2021-02-02 18:36:50] Bundle org.eclipse.oomph.setup.core 1.13.0.v20190531-1228, build=4030, branch=ed8d2fdcc99c1d3461399fc1bee02645433fa697
+[2021-02-02 18:36:50] Bundle org.eclipse.oomph.setup.p2 1.11.0.v20190530-1228, build=4030, branch=ed8d2fdcc99c1d3461399fc1bee02645433fa697
+[2021-02-02 18:36:50] Performing P2 Director (Eclipse IDE for Java Developers (2019-06))
+[2021-02-02 18:36:50] Offline = false
+[2021-02-02 18:36:50] Mirrors = true
+[2021-02-02 18:36:50] Resolving 23 requirements from 3 repositories to C:\Users\eb10\Desktop\취업반\Spring\eclipse
+[2021-02-02 18:36:50] Requirement epp.package.java [4.12.0,5.0.0)
+[2021-02-02 18:36:50] Requirement org.eclipse.platform.feature.group [4.12.0,5.0.0)
+[2021-02-02 18:36:50] Requirement org.eclipse.rcp.feature.group [4.12.0,5.0.0)
+[2021-02-02 18:36:50] Requirement org.eclipse.buildship.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.eclemma.feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.egit.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.egit.mylyn.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.epp.mpc.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.jdt.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.jgit.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.m2e.feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.m2e.logback.feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.bugzilla_feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.context_feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.git.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.hudson.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.ide_feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.java_feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn.wikitext_feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.mylyn_feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.tips.feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.wst.xml_ui.feature.feature.group
+[2021-02-02 18:36:50] Requirement org.eclipse.oomph.setup.feature.group
+[2021-02-02 18:36:50] Repository http://download.eclipse.org/technology/epp/packages/2019-06
+[2021-02-02 18:36:50] Repository http://download.eclipse.org/releases/2019-06/201906191000
+[2021-02-02 18:36:50] Repository http://download.eclipse.org/oomph/updates/milestone/latest
+[2021-02-02 18:36:51] Calculating requirements and dependencies.
+[2021-02-02 18:36:52] Computing prerequisite plan
+[2021-02-02 18:36:53] Collecting 3 artifacts from http://download.eclipse.org/releases/2019-06/201906191000
+[2021-02-02 18:36:54] Downloading org.eclipse.platform_root
+[2021-02-02 18:36:54] Downloading org.eclipse.rcp_root
+[2021-02-02 18:36:54] Downloading org.eclipse.platform.ide.executable.win32.win32.x86_64
+[2021-02-02 18:36:54] Collected 3 artifacts for http://download.eclipse.org/releases/2019-06/201906191000 in 0.606s
+[2021-02-02 18:36:54] Collecting 1 artifacts from http://download.eclipse.org/technology/epp/packages/2019-06
+[2021-02-02 18:36:54] Downloading epp.package.java.executable.win32.win32.x86_64
+[2021-02-02 18:36:54] Collected 1 artifacts for http://download.eclipse.org/technology/epp/packages/2019-06 in 0.52s
+[2021-02-02 18:36:54] An error was detected while performing the engine operation and the changes are being rolled back. See the log for details.
+[2021-02-02 18:36:54] ERROR: org.eclipse.equinox.p2.engine code=4 An error occurred while collecting items to be installed
+  at org.eclipse.oomph.util.OomphPlugin.coreException(OomphPlugin.java:280)
+  at org.eclipse.oomph.p2.internal.core.ProfileTransactionImpl$3.commit(ProfileTransactionImpl.java:548)
+  at org.eclipse.oomph.p2.internal.core.ProfileTransactionImpl.commit(ProfileTransactionImpl.java:340)
+  at org.eclipse.oomph.setup.p2.impl.P2TaskImpl.perform(P2TaskImpl.java:751)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.doPerformNeededSetupTasks(SetupTaskPerformer.java:3824)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.performNeededSetupTasks(SetupTaskPerformer.java:3752)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.performTriggeredSetupTasks(SetupTaskPerformer.java:3733)
+  at org.eclipse.oomph.setup.internal.core.SetupTaskPerformer.perform(SetupTaskPerformer.java:3626)
+  at org.eclipse.oomph.setup.internal.installer.SimpleVariablePage.installPerform(SimpleVariablePage.java:1298)
+  at org.eclipse.oomph.setup.internal.installer.SimpleVariablePage.access$32(SimpleVariablePage.java:1166)
+  at org.eclipse.oomph.setup.internal.installer.SimpleVariablePage$20.run(SimpleVariablePage.java:1111)
+  ERROR: org.eclipse.equinox.p2.engine code=0 session context was:(profile=C__Users_eb10_Desktop_취업반_Spring_eclipse, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+  ERROR: org.eclipse.equinox.p2.artifact.repository code=0 No repository found containing: osgi.bundle,org.eclipse.nebula.widgets.tablecombo,1.2.0.202012291929
+  ERROR: org.eclipse.equinox.p2.artifact.repository code=0 No repository found containing: org.eclipse.update.feature,org.eclipse.oomph.setup,1.20.0.v20210112-0718
+  ERROR: org.eclipse.equinox.p2.artifact.repository code=0 No repository found containing: osgi.bundle,org.eclipse.oomph.setup.ui,1.20.0.v20210112-0718
+
+[2021-02-02 18:36:54] 

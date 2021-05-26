@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+		
+<mapper namespace="com.itbank.model.PosDAO">
+
+	<select id="selectMenu" resultType="pos">
+		select * from pos
+	</select>
+	
+	<insert id="insertMenu" parameterType="pos">
+		insert into pos (product,price,count) VALUES (#{product} ,#{price}, ${count})
+	</insert>
+	
+	<update id="updateCount" parameterType="pos">
+		update pos SET count = count-1 where idx=${idx};
+	</update>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+		"-//mybatis.org//DTD Mapper 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+		
+<mapper namespace="com.itbank.member.MemberDAO">
+
+	<select id="selectAll" resultType="hashmap">
+		select * from member2 order by idx 
+	</select>
+
+	<select id="selectId" parameterType="String" resultType="member">
+		select userid from member2 where  userid = #{userid}
+	</select>
+
+	<select id="selectMember" parameterType="String" resultType="member">
+		select * from member2 where userid=#{userid}
+	</select>
+	
+	<insert id="insertMember" parameterType="member">
+		insert into member2
+			(userid, userpw, username, email, gender)
+		values (
+			#{userid}, #{userpw}, #{username}, #{email}, #{gender}
+		) 
+	</insert>
+	
+</mapper>
