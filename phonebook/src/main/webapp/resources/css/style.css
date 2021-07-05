@@ -1,0 +1,54 @@
+@charset "utf-8";
+#main{
+	border: 1px solid black;
+	height: 500px;
+	width: 350px;
+}
+
+#searchInput{
+	border-radius: 5px;
+	background-color: #dfe6e9;
+	color: black;
+	border:none;
+	border-right:0px; 
+	border-top:0px; 
+	boder-left:0px; 
+	boder-bottom:0px;
+	height: 25px;
+	width: 250px;
+	margin-left: 10px;
+}
+
+#top{
+	display:inline-block;
+} 
+
+#group , #plus{
+	color: #3498db;
+	font-size : 15pt;
+}
+#group{
+	float:left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#plus{
+	font-size:25pt;
+	float:right;
+	margin-left: 250px;
+	margin-top: 0;
+}
+
+#phonebook{
+	text-decoration: none;
+	color: black;
+}
+
+h1{
+	margin-left: 10px;
+}
+
+.hidden{
+	display: none;
+	transition-duration: 0.5s;
+}

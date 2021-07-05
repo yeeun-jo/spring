@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;yeeun/src/main/resources/config/sqlmap-pnum.xml&apos; to &apos;sqlmap-member.xml&apos;" description="Rename resource &apos;sqlmap-pnum.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/config/sqlmap-pnum.xml" name="sqlmap-member.xml" stamp="1614527748292" updateReferences="true"/>
-</session>

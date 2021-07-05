@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="monoPrinter" class="co.kr.mono.aop.ui.MonoPrinter"></bean>
+	<bean id="colorPrinter" class="co.kr.mono.aop.ui.ColorPrinter"></bean>
+	
+	<bean id="person" class="co.kr.mono.aop.entity.Person">
+		<property name="printer" ref="monoPrinter"></property>
+		<property name="name" value="홍길동"></property>
+		<property name="major" value="문학"></property>
+		<property name="examList">
+			<list>
+				<bean class="co.kr.mono.aop.entity.ExamScore">
+					<property name="grade" value="1"></property>
+					<property name="kor" value="100"></property>
+					<property name="eng" value="90"></property>
+					<property name="mat" value="80"></property>
+				</bean>
+				<bean class="co.kr.mono.aop.entity.ExamScore">
+					<property name="grade" value="2"></property>
+					<property name="kor" value="70"></property>
+					<property name="eng" value="90"></property>
+					<property name="mat" value="90"></property>
+				</bean>
+				<bean class="co.kr.mono.aop.entity.ExamScore">
+					<property name="grade" value="3"></property>
+					<property name="kor" value="80"></property>
+					<property name="eng" value="90"></property>
+					<property name="mat" value="50"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="securityAop" class="co.kr.mono.aop.advice.SecurtyAop"></bean>
+	
+	<aop:config>
+		<aop:aspect id="logAspect" ref="securityAop">
+			<aop:pointcut id="logAspectPointCut" expression="execution(public * co.kr.mono.aop.entity.Person.*(..))"/>
+			<aop:before method="logBefore" pointcut-ref="logAspectPointCut"/>
+		</aop:aspect> 
+	</aop:config>
+
+</beans>

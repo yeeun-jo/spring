@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="printer" class="iaccess.di.ui.ColorPrinter"></bean>
+	
+	<bean id="hello" class="iaccess.di.entity.Hello">
+		<property name="printer" ref="printer"></property>
+		
+		<property name="names">
+			<list>
+				<value>Sring</value>
+				<value>Ioc</value>
+				<value>DI</value>
+			</list>
+		</property>
+		
+		<property name="persons">
+			<list>
+				<bean class="iaccess.di.entity.Person">
+					<property name="age" value="30"></property>
+					<property name="name" value="power"></property>
+				</bean>
+				
+				<bean class="iaccess.di.entity.Person">
+					<property name="age" value="50"></property>
+					<property name="name" value="abcd"></property>
+				</bean>
+
+				<bean class="iaccess.di.entity.Person">
+					<property name="age" value="24"></property>
+					<property name="name" value="next"></property>
+				</bean>
+			</list>
+		</property>
+
+		<property name="ages">
+			<map>
+				<entry key="Kim" value="10"></entry>
+				<entry key="Lee" value="20"></entry>
+				<entry key="Ahn" value="30"></entry>
+			</map>
+		</property>
+		
+		<property name="emails">
+			<set>
+				<value>kor@naver.com</value>
+				<value>eng@naver.com</value>
+				<value>eng@naver.com</value>
+			</set>
+		</property>
+	</bean> 
+
+</beans>
